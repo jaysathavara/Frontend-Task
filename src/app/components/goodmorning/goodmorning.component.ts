@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-goodmorning',
@@ -11,9 +12,11 @@ goodmorningForm!: FormGroup;
   isSubmitted: boolean = false;
 
 constructor(
-  private formBuilder: FormBuilder
+  private formBuilder: FormBuilder,
+  private title: Title
 ) {
   this.createForm();
+  this.title.setTitle('Good Morning');
 }
 
 createForm() {
